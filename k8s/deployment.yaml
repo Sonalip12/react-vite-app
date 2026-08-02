@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-vite-app
+  labels:
+    app: react-vite-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-vite-app
+  template:
+    metadata:
+      labels:
+        app: react-vite-app
+    spec:
+      containers:
+        - name: react-vite-app
+          image: __IMAGE__
+          ports:
+            - containerPort: 80
